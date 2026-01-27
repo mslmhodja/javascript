@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript ile Dinamik Butonlar</title>
+    <script>
+        window.onload = function() {
+            // Dinamik olarak butonları oluştur
+            var buton = document.createElement("button");
+            buton.innerHTML = "Topla";
+            buton.onclick = toplama;
+            
+            // Butonu sayfaya ekle
+            document.body.appendChild(buton);
+        }
+
+        function toplama() {
+            // Kullanıcıdan alınan iki değeri alalım
+            var sayi1 = parseFloat(document.getElementById('sayi1').value);
+            var sayi2 = parseFloat(document.getElementById('sayi2').value);
+
+            // Toplamı hesaplayalım
+            var toplam = sayi1 + sayi2;
+
+            // Sonucu ekrana yazdıralım
+            document.getElementById('sonuc').innerHTML = "Toplam: " + toplam;
+        }
+    </script>
+</head>
+<body>
+    <h2>İki Sayıyı Toplama</h2>
+    
+    <!-- İlk metin kutusu -->
+    <label for="sayi1">Birinci Sayı:</label>
+    <input type="number" id="sayi1" name="sayi1">
+    <br><br>
+
+    <!-- İkinci metin kutusu -->
+    <label for="sayi2">İkinci Sayı:</label>
+    <input type="number" id="sayi2" name="sayi2">
+    <br><br>
+
+    <!-- Sonucu gösterecek alan -->
+    <p id="sonuc"></p>
+</body>
+</html>
